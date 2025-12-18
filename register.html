@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 京享购物商城</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="register-page">
+    <div class="register-container">
+        <div class="login-header">
+            <h1><a href="index.html">京享<span class="logo-highlight">购物</span></a></h1>
+            <p>注册京享购物商城账号</p>
+        </div>
+        
+        <div class="register-box">
+            <!-- 注册步骤 -->
+            <div class="register-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">填写信息</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">验证信息</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">完成注册</div>
+                </div>
+            </div>
+            
+            <!-- 注册表单 -->
+            <form id="register-form" class="register-form">
+                <!-- 步骤1：基本信息 -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-group">
+                        <label for="reg-username">
+                            <i class="fas fa-user"></i> 用户名
+                        </label>
+                        <input type="text" id="reg-username" name="username" required 
+                               placeholder="请输入3-16位字母、数字或下划线">
+                        <div class="error-message" id="username-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">
+                            <i class="fas fa-envelope"></i> 邮箱
+                        </label>
+                        <input type="email" id="reg-email" name="email" required 
+                               placeholder="请输入常用邮箱">
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-phone">
+                            <i class="fas fa-mobile-alt"></i> 手机号
+                        </label>
+                        <input type="tel" id="reg-phone" name="phone" required 
+                               placeholder="请输入11位手机号">
+                        <div class="error-message" id="phone-error"></div>
+                    </div>
+                    
+                    <button type="button" class="btn-next-step" data-next="2">下一步</button>
+                </div>
+                
+                <!-- 步骤2：密码设置 -->
+                <div class="form-step" data-step="2">
+                    <div class="form-group">
+                        <label for="reg-password">
+                            <i class="fas fa-lock"></i> 设置密码
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="reg-password" name="password" required 
+                                   placeholder="请输入6-20位密码">
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strength-fill"></div>
+                            </div>
+                            <div class="strength-text" id="strength-text">密码强度</div>
+                        </div>
+                        <div class="error-message" id="password-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-confirm-password">
+                            <i class="fas fa-lock"></i> 确认密码
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="reg-confirm-password" name="confirm-password" required 
+                                   placeholder="请再次输入密码">
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="confirm-password-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-sms-code">
+                            <i class="fas fa-sms"></i> 短信验证码
+                        </label>
+                        <div class="sms-input">
+                            <input type="text" id="reg-sms-code" name="sms-code" required 
+                                   placeholder="请输入6位验证码">
+                            <button type="button" class="btn-send-sms" id="reg-send-sms">
+                                获取验证码
+                            </button>
+                        </div>
+                        <div class="error-message" id="sms-error"></div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn-prev-step" data-prev="1">上一步</button>
+                        <button type="button" class="btn-next-step" data-next="3">下一步</button>
+                    </div>
+                </div>
+                
+                <!-- 步骤3：协议确认 -->
+                <div class="form-step" data-step="3">
+                    <div class="agreement">
+                        <label>
+                            <input type="checkbox" id="agree-terms" required>
+                            我已阅读并同意
+                            <a href="#">《京享购物用户协议》</a>
+                            和
+                            <a href="#">《隐私政策》</a>
+                        </label>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn-prev-step" data-prev="2">上一步</button>
+                        <button type="submit" class="btn-register">完成注册</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                已有账号？ <a href="login.html">立即登录</a>
+            </div>
+        </div>
+        
+        <div class="login-features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>安全可靠</h3>
+                <p>采用银行级加密技术，保障账户安全</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-gift"></i>
+                <h3>新用户福利</h3>
+                <p>注册即送¥100优惠券大礼包</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>快速配送</h3>
+                <p>全国大部分地区当日或次日送达</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/user.js"></script>
+    <script>
+        // 注册页面JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // 多步骤表单功能
+            const steps = document.querySelectorAll('.step');
+            const formSteps = document.querySelectorAll('.form-step');
+            
+            // 下一步按钮
+            document.querySelectorAll('.btn-next-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextStep = this.dataset.next;
+                    goToStep(nextStep);
+                });
+            });
+            
+            // 上一步按钮
+            document.querySelectorAll('.btn-prev-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStep = this.dataset.prev;
+                    goToStep(prevStep);
+                });
+            });
+            
+            function goToStep(stepNumber) {
+                // 更新步骤指示器
+                steps.forEach(step => {
+                    step.classList.remove('active', 'completed');
+                    if (parseInt(step.dataset.step) < stepNumber) {
+                        step.classList.add('completed');
+                    } else if (parseInt(step.dataset.step) == stepNumber) {
+                        step.classList.add('active');
+                    }
+                });
+                
+                // 显示对应表单步骤
+                formSteps.forEach(formStep => {
+                    formStep.classList.remove('active');
+                    if (formStep.dataset.step == stepNumber) {
+                        formStep.classList.add('active');
+                    }
+                });
+            }
+            
+            // 密码强度检查
+            const passwordInput = document.getElementById('reg-password');
+            const strengthFill = document.getElementById('strength-fill');
+            const strengthText = document.getElementById('strength-text');
+            
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = 0;
+                let text = '密码强度';
+                
+                // 长度检查
+                if (password.length >= 6) strength += 1;
+                if (password.length >= 10) strength += 1;
+                
+                // 复杂度检查
+                if (/[a-z]/.test(password)) strength += 1;
+                if (/[A-Z]/.test(password)) strength += 1;
+                if (/[0-9]/.test(password)) strength += 1;
+                if (/[^a-zA-Z0-9]/.test(password)) strength += 1;
+                
+                // 更新UI
+                if (strength <= 2) {
+                    strengthFill.className = 'strength-fill weak';
+                    strengthText.textContent = '弱';
+                    strengthText.style.color = 'var(--error-color)';
+                } else if (strength <= 4) {
+                    strengthFill.className = 'strength-fill medium';
+                    strengthText.textContent = '中';
+                    strengthText.style.color = 'var(--warning-color)';
+                } else {
+                    strengthFill.className = 'strength-fill strong';
+                    strengthText.textContent = '强';
+                    strengthText.style.color = 'var(--success-color)';
+                }
+            });
+            
+            // 密码显示/隐藏切换
+            document.querySelectorAll('.toggle-password').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.innerHTML = type === 'password' ? 
+                        '<i class="fas fa-eye"></i>' : 
+                        '<i class="fas fa-eye-slash"></i>';
+                });
+            });
+            
+            // 发送短信验证码
+            const sendSmsBtn = document.getElementById('reg-send-sms');
+            let countdown = 0;
+            let timer = null;
+            
+            sendSmsBtn.addEventListener('click', function() {
+                const phoneInput = document.getElementById('reg-phone');
+                const phone = phoneInput.value.trim();
+                
+                // 验证手机号
+                if (!utils.validatePhone(phone)) {
+                    document.getElementById('phone-error').textContent = '请输入有效的手机号';
+                    phoneInput.focus();
+                    return;
+                }
+                
+                // 开始倒计时
+                startCountdown();
+                
+                // 模拟发送短信
+                console.log(`发送验证码到: ${phone}`);
+            });
+            
+            function startCountdown() {
+                countdown = 60;
+                sendSmsBtn.disabled = true;
+                
+                timer = setInterval(() => {
+                    countdown--;
+                    sendSmsBtn.textContent = `${countdown}秒后重发`;
+                    
+                    if (countdown <= 0) {
+                        clearInterval(timer);
+                        sendSmsBtn.disabled = false;
+                        sendSmsBtn.textContent = '获取验证码';
+                    }
+                }, 1000);
+            }
+            
+            // 表单提交
+            const registerForm = document.getElementById('register-form');
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const username = document.getElementById('reg-username').value.trim();
+                const email = document.getElementById('reg-email').value.trim();
+                const phone = document.getElementById('reg-phone').value.trim();
+                const password = document.getElementById('reg-password').value.trim();
+                const confirmPassword = document.getElementById('reg-confirm-password').value.trim();
+                const smsCode = document.getElementById('reg-sms-code').value.trim();
+                const agreeTerms = document.getElementById('agree-terms').checked;
+                
+                // 验证
+                let isValid = true;
+                
+                // 验证用户名
+                if (!username || username.length < 3 || username.length > 16) {
+                    document.getElementById('username-error').textContent = '用户名需3-16位字母、数字或下划线';
+                    isValid = false;
+                } else {
+                    document.getElementById('username-error').textContent = '';
+                }
+                
+                // 验证邮箱
+                if (!utils.validateEmail(email)) {
+                    document.getElementById('email-error').textContent = '请输入有效的邮箱地址';
+                    isValid = false;
+                } else {
+                    document.getElementById('email-error').textContent = '';
+                }
+                
+                // 验证手机号
+                if (!utils.validatePhone(phone)) {
+                    document.getElementById('phone-error').textContent = '请输入有效的手机号';
+                    isValid = false;
+                } else {
+                    document.getElementById('phone-error').textContent = '';
+                }
+                
+                // 验证密码
+                if (!utils.validatePassword(password)) {
+                    document.getElementById('password-error').textContent = '密码需至少8位，包含字母和数字';
+                    isValid = false;
+                } else {
+                    document.getElementById('password-error').textContent = '';
+                }
+                
+                // 验证确认密码
+                if (password !== confirmPassword) {
+                    document.getElementById('confirm-password-error').textContent = '两次输入的密码不一致';
+                    isValid = false;
+                } else {
+                    document.getElementById('confirm-password-error').textContent = '';
+                }
+                
+                // 验证短信验证码
+                if (!smsCode || smsCode.length !== 6) {
+                    document.getElementById('sms-error').textContent = '请输入6位验证码';
+                    isValid = false;
+                } else {
+                    document.getElementById('sms-error').textContent = '';
+                }
+                
+                // 验证协议同意
+                if (!agreeTerms) {
+                    alert('请同意用户协议和隐私政策');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    // 如果有错误，跳回第二步
+                    goToStep(2);
+                    return;
+                }
+                
+                // 模拟注册成功
+                const users = utils.storage.get('users', []);
+                
+                // 检查用户名、邮箱、手机号是否已存在
+                if (users.some(u => u.username === username)) {
+                    document.getElementById('username-error').textContent = '用户名已存在';
+                    goToStep(1);
+                    return;
+                }
+                
+                if (users.some(u => u.email === email)) {
+                    document.getElementById('email-error').textContent = '邮箱已注册';
+                    goToStep(1);
+                    return;
+                }
+                
+                if (users.some(u => u.phone === phone)) {
+                    document.getElementById('phone-error').textContent = '手机号已注册';
+                    goToStep(1);
+                    return;
+                }
+                
+                // 创建新用户
+                const newUser = {
+                    id: 'user_' + Date.now(),
+                    username: username,
+                    email: email,
+                    phone: phone,
+                    password: password, // 注意：实际应用中应该加密存储
+                    createdAt: new Date().toISOString(),
+                    avatar: 'https://ui-avatars.com/api/?name=' + encodeURIComponent(username)
+                };
+                
+                users.push(newUser);
+                utils.storage.set('users', users);
+                
+                // 自动登录
+                const userData = {
+                    id: newUser.id,
+                    username: newUser.username,
+                    email: newUser.email,
+                    phone: newUser.phone,
+                    avatar: newUser.avatar,
+                    token: 'mock-token-' + Date.now(),
+                    loginTime: new Date().toISOString()
+                };
+                
+                utils.storage.set('user', userData);
+                
+                // 显示成功消息
+                alert('注册成功！欢迎来到京享购物商城！');
+                
+                // 跳转到首页
+                window.location.href = 'index.html';
+            });
+            
+            // 实时验证
+            document.getElementById('reg-username').addEventListener('blur', function() {
+                const username = this.value.trim();
+                if (username && (username.length < 3 || username.length > 16)) {
+                    document.getElementById('username-error').textContent = '用户名需3-16位字母、数字或下划线';
+                } else {
+                    document.getElementById('username-error').textContent = '';
+                }
+            });
+            
+            document.getElementById('reg-email').addEventListener('blur', function() {
+                const email = this.value.trim();
+                if (email && !utils.validateEmail(email)) {
+                    document.getElementById('email-error').textContent = '请输入有效的邮箱地址';
+                } else {
+                    document.getElementById('email-error').textContent = '';
+                }
+            });
+            
+            document.getElementById('reg-phone').addEventListener('blur', function() {
+                const phone = this.value.trim();
+                if (phone && !utils.validatePhone(phone)) {
+                    document.getElementById('phone-error').textContent = '请输入有效的手机号';
+                } else {
+                    document.getElementById('phone-error').textContent = '';
+                }
+            });
+            
+            document.getElementById('reg-confirm-password').addEventListener('input', function() {
+                const password = document.getElementById('reg-password').value.trim();
+                const confirmPassword = this.value.trim();
+                
+                if (confirmPassword && password !== confirmPassword) {
+                    document.getElementById('confirm-password-error').textContent = '两次输入的密码不一致';
+                } else {
+                    document.getElementById('confirm-password-error').textContent = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
