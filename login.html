@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 京享购物商城</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1><a href="index.html">京东<span class="logo-highlight">购物</span></a></h1>
+            <p>欢迎登录京东购物商城</p>
+        </div>
+        
+        <div class="login-box">
+            <div class="login-tabs">
+                <button class="login-tab active" data-type="password">密码登录</button>
+                <button class="login-tab" data-type="sms">短信登录</button>
+            </div>
+            
+            <!-- 密码登录表单 -->
+            <form id="password-login-form" class="login-form active">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i> 用户名/邮箱/手机号
+                    </label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="请输入用户名、邮箱或手机号">
+                    <div class="error-message" id="username-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> 密码
+                    </label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required 
+                               placeholder="请输入密码">
+                        <button type="button" class="toggle-password" id="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span>记住登录状态</span>
+                    </label>
+                    <a href="#" class="forgot-password">忘记密码？</a>
+                </div>
+                
+                <button type="submit" class="btn-login">登录</button>
+            </form>
+            
+            <!-- 短信登录表单
+            <form id="sms-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-mobile-alt"></i> 手机号
+                    </label>
+                    <input type="tel" id="phone" name="phone" required 
+                           placeholder="请输入手机号">
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sms-code">
+                        <i class="fas fa-sms"></i> 短信验证码
+                    </label>
+                    <div class="sms-input">
+                        <input type="text" id="sms-code" name="sms-code" required 
+                               placeholder="请输入6位验证码">
+                        <button type="button" class="btn-send-sms" id="send-sms">
+                            获取验证码
+                        </button>
+                    </div>
+                    <div class="error-message" id="sms-error"></div>
+                </div>
+                
+                <button type="submit" class="btn-login">登录</button>
+            </form>
+            
+            <div class="login-divider">
+                <span>其他登录方式</span>
+            </div>
+            
+            <div class="social-login">
+                <button class="btn-social wechat">
+                    <i class="fab fa-weixin"></i> 微信登录
+                </button>
+                <button class="btn-social qq">
+                    <i class="fab fa-qq"></i> QQ登录
+                </button>
+                <button class="btn-social weibo">
+                    <i class="fab fa-weibo"></i> 微博登录
+                </button>
+            </div>
+            
+            <div class="login-footer">
+                还没有账号？ <a href="register.html">立即注册</a>
+            </div>
+        </div>
+        
+        <div class="login-features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>安全可靠</h3>
+                <p>采用银行级加密技术，保障账户安全</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>快速配送</h3>
+                <p>全国大部分地区当日或次日送达</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>客服支持</h3>
+                <p>7×24小时在线客服，随时为您服务</p>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="js/utils.js"></script>
+    <script src="js/user.js"></script>
+    <!-- <script>
+        // 登录页面特定功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 登录标签切换
+            const loginTabs = document.querySelectorAll('.login-tab');
+            const loginForms = document.querySelectorAll('.login-form');
+            
+            loginTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const type = this.dataset.type;
+                    
+                    // 更新标签状态
+                    loginTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应表单
+                    loginForms.forEach(form => {
+                        form.classList.remove('active');
+                        if (form.id === `${type}-login-form`) {
+                            form.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // 密码显示/隐藏切换
+            const togglePasswordBtn = document.getElementById('toggle-password');
+            const passwordInput = document.getElementById('password');
+            
+            togglePasswordBtn.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+            
+            // 发送短信验证码
+            const sendSmsBtn = document.getElementById('send-sms');
+            let countdown = 0;
+            let timer = null;
+            
+            sendSmsBtn.addEventListener('click', function() {
+                const phoneInput = document.getElementById('phone');
+                const phone = phoneInput.value.trim();
+                
+                // 验证手机号
+                if (!utils.validatePhone(phone)) {
+                    document.getElementById('phone-error').textContent = '请输入有效的手机号';
+                    return;
+                }
+                
+                // 开始倒计时
+                startCountdown();
+                
+                // 模拟发送短信
+                console.log(`发送验证码到: ${phone}`);
+                
+                // 在实际应用中，这里会调用API发送短信
+                // fetch('/api/send-sms', {
+                //     method: 'POST',
+                //     body: JSON.stringify({ phone })
+                // });
+            });
+            
+            function startCountdown() {
+                countdown = 60;
+                sendSmsBtn.disabled = true;
+                
+                timer = setInterval(() => {
+                    countdown--;
+                    sendSmsBtn.textContent = `${countdown}秒后重发`;
+                    
+                    if (countdown <= 0) {
+                        clearInterval(timer);
+                        sendSmsBtn.disabled = false;
+                        sendSmsBtn.textContent = '获取验证码';
+                    }
+                }, 1000);
+            }
+            
+            // 密码登录表单提交
+            const passwordForm = document.getElementById('password-login-form');
+            passwordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const remember = document.getElementById('remember').checked;
+                
+                // 简单验证
+                if (!username) {
+                    document.getElementById('username-error').textContent = '请输入用户名';
+                    return;
+                }
+                
+                if (!password) {
+                    document.getElementById('password-error').textContent = '请输入密码';
+                    return;
+                }
+                
+                // 模拟登录
+                const users = utils.storage.get('users', []);
+                const user = users.find(u => 
+                    u.username === username || 
+                    u.email === username || 
+                    u.phone === username
+                );
+                
+                if (!user) {
+                    document.getElementById('username-error').textContent = '用户不存在';
+                    return;
+                }
+                
+                if (user.password !== password) {
+                    document.getElementById('password-error').textContent = '密码错误';
+                    return;
+                }
+                
+                // 登录成功
+                const userData = {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email,
+                    phone: user.phone,
+                    avatar: user.avatar,
+                    token: 'mock-token-' + Date.now(),
+                    loginTime: new Date().toISOString()
+                };
+                
+                if (remember) {
+                    utils.storage.set('user', userData);
+                } else {
+                    // 会话存储
+                    sessionStorage.setItem('user', JSON.stringify(userData));
+                }
+                
+                // 显示成功消息
+                alert('登录成功！');
+                
+                // 跳转到首页或来源页面
+                const returnUrl = new URLSearchParams(window.location.search).get('return');
+                window.location.href = returnUrl || 'index.html';
+            });
+            
+            // 短信登录表单提交
+            const smsForm = document.getElementById('sms-login-form');
+            smsForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const phone = document.getElementById('phone').value.trim();
+                const smsCode = document.getElementById('sms-code').value.trim();
+                
+                // 简单验证
+                if (!utils.validatePhone(phone)) {
+                    document.getElementById('phone-error').textContent = '请输入有效的手机号';
+                    return;
+                }
+                
+                if (!smsCode || smsCode.length !== 6) {
+                    document.getElementById('sms-error').textContent = '请输入6位验证码';
+                    return;
+                }
+                
+                // 模拟验证码验证
+                if (smsCode !== '123456') { // 测试用验证码
+                    document.getElementById('sms-error').textContent = '验证码错误';
+                    return;
+                }
+                
+                // 登录成功
+                const userData = {
+                    id: 'sms-user-' + Date.now(),
+                    phone: phone,
+                    token: 'mock-token-' + Date.now(),
+                    loginTime: new Date().toISOString()
+                };
+                
+                utils.storage.set('user', userData);
+                
+                // 显示成功消息
+                alert('短信登录成功！');
+                window.location.href = 'index.html';
+            });
+        });
+    </script> -->
+</body>
+</html>
