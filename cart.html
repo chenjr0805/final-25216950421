@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车 - 京享购物商城</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="welcome">欢迎来到京享购物商城！</div>
+                <div class="user-links">
+                    <a href=" " id="login-link">请登录</a >
+                    <span>|</span>
+                    <a href="register.html">免费注册</a >
+                    <span>|</span>
+                    <a href="user-center.html"><i class="fas fa-user"></i> 我的订单</a >
+                    <span>|</span>
+                    <a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cart-count">0</span></a >
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <h1><a href="index.html">京东<span class="logo-highlight">购物</span></a ></h1>
+                </div>
+                
+                <div class="cart-search-box">
+                    <div class="search-box">
+                        <input type="text" id="cart-search-input" placeholder="在购物车中搜索商品...">
+                        <button id="cart-search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="header-hotline">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <p>客服热线</p >
+                        <p class="hotline-number">400-888-9999</p >
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> 首页</a ></li>
+                    <li><a href="#"><i class="fas fa-mobile-alt"></i> 手机数码</a ></li>
+                    <li><a href="#"><i class="fas fa-tshirt"></i> 服装鞋包</a ></li>
+                    <li><a href="#"><i class="fas fa-laptop"></i> 电脑办公</a ></li>
+                    <li><a href="#"><i class="fas fa-utensils"></i> 食品生鲜</a ></li>
+                    <li><a href="#"><i class="fas fa-couch"></i> 家居生活</a ></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">首页</a >
+            <i class="fas fa-chevron-right"></i>
+            <span>购物车</span>
+        </div>
+    </div>
+
+    <!-- 购物车主体 -->
+    <main class="cart-page">
+        <div class="container">
+            <!-- 购物车头部 -->
+            <div class="cart-header">
+                <h1><i class="fas fa-shopping-cart"></i> 购物车</h1>
+                <div class="cart-stats">
+                    <span>共 <strong id="total-items">0</strong> 件商品</span>
+                    <span id="selected-items-info" style="display: none;">已选 <strong id="selected-count">0</strong> 件商品</span>
+                </div>
+            </div>
+
+            <!-- 购物车为空状态 -->
+            <div class="cart-empty" id="cart-empty">
+                <div class="empty-content">
+                    <i class="fas fa-shopping-cart fa-4x"></i>
+                    <h2>购物车空空如也</h2>
+                    <p>快去选购心仪的商品吧！</p >
+                    <a href="index.html" class="btn-shopping">去逛逛</a >
+                </div>
+            </div>
+
+            <!-- 购物车商品列表 -->
+            <div class="cart-content" id="cart-content" style="display: none;">
+                <div class="cart-main">
+                    <!-- 商品列表 -->
+                    <div class="cart-items">
+                        <!-- 店铺分组 -->
+                        <div class="cart-store-group">
+                            <div class="store-header">
+                                <label class="checkbox store-select">
+                                    <input type="checkbox" class="store-checkbox">
+                                    <span>京享自营旗舰店</span>
+                                </label>
+                                <button class="btn-collapse">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="cart-items-list">
+                                <!-- 单个商品项将通过JS动态生成 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 更多店铺组可以在这里添加 -->
+                    </div>
+                    
+                    <!-- 结算栏 -->
+                    <div class="cart-sidebar">
+                        <div class="order-summary">
+                            <h3>订单摘要</h3>
+                            
+                            <div class="summary-item">
+                                <span>商品总价：</span>
+                                <span id="subtotal">¥0.00</span>
+                            </div>
+                            
+                            <div class="summary-item">
+                                <span>运费：</span>
+                                <span id="shipping-fee">¥0.00</span>
+                            </div>
+                            
+                            <div class="summary-item discount">
+                                <span>优惠券：</span>
+                                <span id="coupon-discount">-¥0.00</span>
+                                <button class="btn-choose-coupon" id="choose-coupon">选择优惠券</button>
+                            </div>
+                            
+                            <div class="summary-item total">
+                                <span>应付总额：</span>
+                                <span id="total-amount">¥0.00</span>
+                            </div>
+                            
+                            <div class="saving-info">
+                                已节省：<span id="total-saving">¥0.00</span>
+                            </div>
+                            
+                            <button class="btn-checkout" id="checkout-btn" disabled>
+                                去结算 (<span id="checkout-count">0</span>)
+                            </button>
+                            
+                            <div class="cart-tips">
+                                <p><i class="fas fa-check-circle"></i> 支持七天无理由退货</p >
+                                <p><i class="fas fa-shield-alt"></i> 正品保障</p >
+                            </div>
+                        </div>
+                        
+                        <!-- 推荐商品 -->
+                        <div class="cart-recommendations">
+                            <h3>猜你喜欢</h3>
+                            <div class="recommendation-list" id="recommendation-list">
+                                <!-- 推荐商品动态生成 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 批量操作栏 -->
+                <div class="cart-batch-actions">
+                    <div class="batch-left">
+                        <label class="checkbox select-all">
+                            <input type="checkbox" id="select-all">
+                            <span>全选</span>
+                        </label>
+                        <button class="btn-batch-delete" id="batch-delete">
+                            <i class="fas fa-trash-alt"></i> 删除选中
+                        </button>
+                        <button class="btn-clear-cart" id="clear-cart">
+                            <i class="fas fa-broom"></i> 清空购物车
+                        </button>
+                        <button class="btn-move-to-favorites" id="move-to-favorites">
+                            <i class="fas fa-heart"></i> 移到收藏夹
+                        </button>
+                    </div>
+                    
+                    <div class="batch-right">
+                        <button class="btn-continue-shopping">
+                            <i class="fas fa-shopping-bag"></i> 继续购物
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 优惠券选择模态框 -->
+    <div class="modal" id="coupon-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>选择优惠券</h3>
+                <button class="modal-close" id="close-coupon-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="coupon-tabs">
+                    <button class="coupon-tab active" data-type="available">可用优惠券</button>
+                    <button class="coupon-tab" data-type="unavailable">不可用优惠券</button>
+                </div>
+                
+                <div class="coupon-list" id="available-coupons">
+                    <!-- 可用优惠券列表 -->
+                    <div class="coupon-item">
+                        <div class="coupon-info">
+                            <h4>新用户专享券</h4>
+                            <p>满100减20</p >
+                            <p class="coupon-desc">仅限新用户使用</p >
+                            <p class="coupon-expiry">有效期至 2023-12-31</p >
+                        </div>
+                        <button class="btn-use-coupon" data-amount="20">立即使用</button>
+                    </div>
+                    
+                    <div class="coupon-item">
+                        <div class="coupon-info">
+                            <h4>店铺通用券</h4>
+                            <p>满300减50</p >
+                            <p class="coupon-desc">全场通用</p >
+                            <p class="coupon-expiry">有效期至 2023-12-31</p >
+                        </div>
+                        <button class="btn-use-coupon" data-amount="50">立即使用</button>
+                    </div>
+                    
+                    <div class="coupon-item">
+                        <div class="coupon-info">
+                            <h4>双十一大促券</h4>
+                            <p>满500减100</p >
+                            <p class="coupon-desc">仅限双十一期间使用</p >
+                            <p class="coupon-expiry">有效期至 2023-11-15</p >
+                        </div>
+                        <button class="btn-use-coupon" data-amount="100">立即使用</button>
+                    </div>
+                </div>
+                
+                <div class="coupon-list" id="unavailable-coupons" style="display: none;">
+                    <!-- 不可用优惠券列表 -->
+                    <div class="coupon-item disabled">
+                        <div class="coupon-info">
+                            <h4>会员专享券</h4>
+                            <p>满200减30</p >
+                            <p class="coupon-desc">仅限VIP会员使用</p >
+                            <p class="coupon-expiry">已过期</p >
+                        </div>
+                        <button class="btn-use-coupon" disabled>不可用</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 浮动购物车 -->
+    <div class="floating-cart" id="floating-cart">
+        <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="floating-cart-count">0</span>
+        </a >
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>购物指南</h4>
+                    <ul>
+                        <li><a href="#">购物流程</a ></li>
+                        <li><a href="#">会员介绍</a ></li>
+                        <li><a href="#">常见问题</a ></li>
+                        <li><a href="#">联系客服</a ></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>配送方式</h4>
+                    <ul>
+                        <li><a href="#">上门自提</a ></li>
+                        <li><a href="#">配送服务</a ></li>
+                        <li><a href="#">配送费用</a ></li>
+                        <li><a href="#">商品验收</a ></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>支付方式</h4>
+                    <ul>
+                        <li><a href="#">货到付款</a ></li>
+                        <li><a href="#">在线支付</a ></li>
+                        <li><a href="#">分期付款</a ></li>
+                        <li><a href="#">礼品卡支付</a ></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>售后服务</h4>
+                    <ul>
+                        <li><a href="#">退货政策</a ></li>
+                        <li><a href="#">退款说明</a ></li>
+                        <li><a href="#">价格保护</a ></li>
+                        <li><a href="#">取消订单</a ></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a >
+                        <a href="#"><i class="fab fa-weibo"></i></a >
+                        <a href="#"><i class="fab fa-qq"></i></a >
+                        <a href="#"><i class="fab fa-github"></i></a >
+                    </div>
+                    <p>客服热线: 400-888-9999</p >
+                    <p>服务时间: 9:00-24:00</p >
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 京享购物商城 版权所有</p >
+                <p>京ICP备12345678号 | 公安备案11010102001234号</p >
+                <p>本网站仅为学习演示之用，非实际商业网站</p >
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
