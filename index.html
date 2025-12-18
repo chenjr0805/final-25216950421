@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东购物</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="welcome">欢迎来到京东购物商城！</div>
+                <div class="user-links">
+                    <a href="login.html" id="login-link">请登录</a>
+                    <span>|</span>
+                    <a href="register.html">免费注册</a>
+                    <span>|</span>
+                    <a href="user-center.html"><i class="fas fa-user"></i> 我的订单</a>
+                    <span>|</span>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cart-count">0</span></a>
+                </div>
+            </div>
+            
+            <div class="header-main">
+                <div class="logo">
+                    <h1><a href="index.html">京东<span class="logo-highlight">购物</span></a></h1>
+                </div>
+                
+                <div class="search-box">
+                    <div class="search-category">
+                        <select id="search-category">
+                            <option value="all">全部分类</option>
+                            <option value="electronics">电子产品</option>
+                            <option value="clothing">服装鞋包</option>
+                            <option value="books">图书音像</option>
+                            <option value="home">家居生活</option>
+                            <option value="food">食品生鲜</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <input type="text" id="search-input" placeholder="搜索商品...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-suggestions" id="search-suggestions"></div>
+                </div>
+                
+                <div class="header-hotline">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <p>客服热线</p>
+                        <p class="hotline-number">400-888-9999</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-home active"><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="#"><i class="fas fa-mobile-alt"></i> 手机数码</a></li>
+                    <li><a href="#"><i class="fas fa-tshirt"></i> 服装鞋包</a></li>
+                    <li><a href="#"><i class="fas fa-laptop"></i> 电脑办公</a></li>
+                    <li><a href="#"><i class="fas fa-utensils"></i> 食品生鲜</a></li>
+                    <li><a href="#"><i class="fas fa-couch"></i> 家居生活</a></li>
+                    <li><a href="#"><i class="fas fa-heartbeat"></i> 医药健康</a></li>
+                    <li><a href="#"><i class="fas fa-car"></i> 汽车用品</a></li>
+                    <li><a href="#"><i class="fas fa-gift"></i> 礼品鲜花</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 轮播图 -->
+    <section class="slider-section">
+        <div class="container">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="./images/轮播图1.jpg" alt="促销活动1">
+                        <div class="slide-content">
+                            <h2>618大促来袭</h2>
+                            <p>全场跨店每满300减50</p>
+                            <a href="#" class="btn-slider">立即抢购</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/轮播图2.jpg" alt="促销活动2">
+                        <div class="slide-content">
+                            <h2>新品首发</h2>
+                            <p>最新电子产品火热发售中</p>
+                            <a href="#" class="btn-slider">查看详情</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="./images/轮播图3.jpg" alt="促销活动3">
+                        <div class="slide-content">
+                            <h2>时尚服饰</h2>
+                            <p>春夏新品上市，满199减50</p>
+                            <a href="#" class="btn-slider">立即选购</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 推荐商品区域 -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">热销推荐</h2>
+                <div class="section-tabs">
+                    <button class="tab-btn active" data-category="all">全部</button>
+                    <button class="tab-btn" data-category="electronics">电子产品</button>
+                    <button class="tab-btn" data-category="clothing">服装鞋包</button>
+                    <button class="tab-btn" data-category="home">家居生活</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- 商品将通过JavaScript动态加载 -->
+            </div>
+            
+            <div class="section-footer">
+                <button id="load-more" class="btn-load-more">加载更多商品</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 浮动购物车 -->
+    <div class="floating-cart" id="floating-cart">
+        <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="floating-cart-count">0</span>
+        </a>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>购物指南</h4>
+                    <ul>
+                        <li><a href="#">购物流程</a></li>
+                        <li><a href="#">会员介绍</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>配送方式</h4>
+                    <ul>
+                        <li><a href="#">上门自提</a></li>
+                        <li><a href="#">配送服务</a></li>
+                        <li><a href="#">配送费用</a></li>
+                        <li><a href="#">商品验收</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>支付方式</h4>
+                    <ul>
+                        <li><a href="#">货到付款</a></li>
+                        <li><a href="#">在线支付</a></li>
+                        <li><a href="#">分期付款</a></li>
+                        <li><a href="#">礼品卡支付</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>售后服务</h4>
+                    <ul>
+                        <li><a href="#">退货政策</a></li>
+                        <li><a href="#">退款说明</a></li>
+                        <li><a href="#">价格保护</a></li>
+                        <li><a href="#">取消订单</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p>客服热线: 400-888-9999</p>
+                    <p>服务时间: 9:00-24:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 京享购物商城 版权所有</p>
+                <p>京ICP备12345678号 | 公安备案11010102001234号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>
