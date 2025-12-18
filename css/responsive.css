@@ -1,0 +1,249 @@
+/* 平板设备 (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .header-main {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .search-box {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 大屏手机 (576px - 768px) */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav li {
+        flex: 0 0 25%;
+    }
+    
+    .slider-container {
+        height: 300px;
+    }
+    
+    .slide-content h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .slide-content p {
+        font-size: var(--font-size-md);
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 小屏手机 (< 576px) */
+@media (max-width: 576px) {
+    :root {
+        --spacing-lg: 16px;
+        --spacing-xl: 24px;
+    }
+    
+    .logo h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .header-main {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .main-nav li {
+        flex: 0 0 50%;
+    }
+    
+    .main-nav a {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+    
+    .slider-container {
+        height: 200px;
+    }
+    
+    .slide-content {
+        left: 5%;
+        bottom: 10%;
+    }
+    
+    .slide-content h2 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .slide-content p {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .btn-slider {
+        padding: var(--spacing-xs) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+    
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: var(--font-size-md);
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    
+    .section-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-cart {
+        right: var(--spacing-md);
+        bottom: var(--spacing-md);
+    }
+    
+    .floating-cart a {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* 超大屏幕 (> 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header, .footer, .floating-cart, .btn-add-cart, .btn-favorite {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* 登录页面响应式 */
+@media (max-width: 768px) {
+    .login-container, .register-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .login-box, .register-box {
+        padding: var(--spacing-lg);
+    }
+    
+    .login-features {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature {
+        padding: var(--spacing-md);
+    }
+    
+    .register-steps::before {
+        left: 30px;
+        right: 30px;
+    }
+    
+    .step-label {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 576px) {
+    .login-header h1, .register-header h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .login-box, .register-box {
+        padding: var(--spacing-md);
+    }
+    
+    .register-steps::before {
+        left: 20px;
+        right: 20px;
+    }
+    
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .form-buttons {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+    
+    .btn-prev-step, .btn-next-step {
+        flex: 1;
+        padding: var(--spacing-sm);
+    }
+}

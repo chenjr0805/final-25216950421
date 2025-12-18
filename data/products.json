@@ -1,0 +1,209 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "苹果iPhone 14 Pro Max 256GB 深空黑色",
+      "description": "苹果最新款旗舰手机，搭载A16仿生芯片，4800万像素主摄像头，灵动岛设计，全天候显示功能。",
+      "price": 8999,
+      "originalPrice": 9999,
+      "category": "electronics",
+      "subCategory": "手机",
+      "brand": "Apple",
+      "rating": 4.8,
+      "reviews": 1250,
+      "stock": 150,
+      "images": [
+        "https://images.unsplash.com/photo-1675864663150-434b5dbe5f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+        "https://images.unsplash.com/photo-1675864667660-5695d8c2a554?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+        "https://images.unsplash.com/photo-1675864663150-434b5dbe5f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "屏幕尺寸": "6.7英寸",
+        "分辨率": "2796x1290像素",
+        "处理器": "A16仿生芯片",
+        "内存": "6GB",
+        "存储": "256GB",
+        "后置摄像头": "4800万像素+1200万像素+1200万像素",
+        "前置摄像头": "1200万像素",
+        "电池容量": "4323mAh",
+        "操作系统": "iOS 16"
+      },
+      "tags": ["新品", "热卖", "旗舰机", "智能手机"],
+      "createdAt": "2023-05-10T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "小米13 Ultra 12GB+256GB 黑色 徕卡影像",
+      "description": "小米与徕卡联合打造的影像旗舰，搭载骁龙8 Gen 2处理器，1英寸大底主摄，专业影像系统。",
+      "price": 5999,
+      "originalPrice": 6499,
+      "category": "electronics",
+      "subCategory": "手机",
+      "brand": "小米",
+      "rating": 4.7,
+      "reviews": 980,
+      "stock": 200,
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1772&q=80",
+        "https://images.unsplash.com/photo-1598327105854-c8674faddf74?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "屏幕尺寸": "6.73英寸",
+        "分辨率": "3200x1440像素",
+        "处理器": "骁龙8 Gen 2",
+        "内存": "12GB",
+        "存储": "256GB",
+        "后置摄像头": "5000万像素+5000万像素+5000万像素",
+        "前置摄像头": "3200万像素",
+        "电池容量": "5000mAh",
+        "操作系统": "MIUI 14"
+      },
+      "tags": ["徕卡影像", "旗舰机", "新品"],
+      "createdAt": "2023-04-15T14:20:00Z"
+    },
+    {
+      "id": 3,
+      "name": "联想拯救者Y9000P 游戏笔记本电脑",
+      "description": "16英寸2.5K电竞屏，搭载第13代英特尔酷睿i9处理器，RTX 4060显卡，专业游戏本性能。",
+      "price": 10999,
+      "originalPrice": 11999,
+      "category": "electronics",
+      "subCategory": "电脑",
+      "brand": "联想",
+      "rating": 4.9,
+      "reviews": 760,
+      "stock": 80,
+      "images": [
+        "https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=1768&q=80",
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "屏幕尺寸": "16英寸",
+        "分辨率": "2560x1600像素",
+        "处理器": "Intel Core i9-13900HX",
+        "显卡": "NVIDIA GeForce RTX 4060",
+        "内存": "16GB DDR5",
+        "存储": "1TB SSD",
+        "刷新率": "240Hz",
+        "操作系统": "Windows 11"
+      },
+      "tags": ["游戏本", "高性能", "电竞"],
+      "createdAt": "2023-03-20T09:15:00Z"
+    },
+    {
+      "id": 4,
+      "name": "男士商务休闲西装外套",
+      "description": "春季新款男士西装外套，采用优质混纺面料，修身剪裁设计，适合商务休闲多种场合。",
+      "price": 499,
+      "originalPrice": 699,
+      "category": "clothing",
+      "subCategory": "男装",
+      "brand": "海澜之家",
+      "rating": 4.5,
+      "reviews": 320,
+      "stock": 300,
+      "images": [
+        "https://images.unsplash.com/photo-1594938374182-2511f37b2e98?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "面料成分": "羊毛60%，聚酯纤维40%",
+        "版型": "修身",
+        "领型": "平驳领",
+        "颜色": "深灰色",
+        "尺码": "S/M/L/XL",
+        "季节": "春秋",
+        "适用场合": "商务、休闲"
+      },
+      "tags": ["商务", "休闲", "春季新款"],
+      "createdAt": "2023-02-28T16:45:00Z"
+    },
+    {
+      "id": 5,
+      "name": "女士春季连衣裙新款",
+      "description": "时尚V领碎花连衣裙，雪纺面料，修身A字版型，适合春季日常穿着和各种约会场合。",
+      "price": 299,
+      "originalPrice": 399,
+      "category": "clothing",
+      "subCategory": "女装",
+      "brand": "韩都衣舍",
+      "rating": 4.6,
+      "reviews": 450,
+      "stock": 250,
+      "images": [
+        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "面料成分": "聚酯纤维100%",
+        "版型": "A字",
+        "领型": "V领",
+        "袖长": "短袖",
+        "颜色": "碎花",
+        "尺码": "XS/S/M/L",
+        "季节": "春季",
+        "风格": "甜美、淑女"
+      },
+      "tags": ["连衣裙", "碎花", "春季新款", "甜美"],
+      "createdAt": "2023-03-10T11:20:00Z"
+    },
+    {
+      "id": 6,
+      "name": "北欧简约实木餐桌椅组合",
+      "description": "北欧风格实木餐桌椅组合，采用优质橡木制作，简约设计，适合现代家庭餐厅使用。",
+      "price": 2499,
+      "originalPrice": 2999,
+      "category": "home",
+      "subCategory": "家具",
+      "brand": "宜家",
+      "rating": 4.8,
+      "reviews": 210,
+      "stock": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+        "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+      ],
+      "specifications": {
+        "材质": "橡木",
+        "颜色": "原木色",
+        "餐桌尺寸": "140x80x75cm",
+        "椅子尺寸": "45x50x85cm",
+        "包含数量": "1桌4椅",
+        "风格": "北欧简约",
+        "适用空间": "餐厅"
+      },
+      "tags": ["实木", "北欧风", "餐桌椅"],
+      "createdAt": "2023-01-15T13:30:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "electronics",
+      "name": "电子产品",
+      "subCategories": ["手机", "电脑", "平板", "相机", "耳机", "智能设备"]
+    },
+    {
+      "id": "clothing",
+      "name": "服装鞋包",
+      "subCategories": ["男装", "女装", "童装", "鞋类", "箱包", "配饰"]
+    },
+    {
+      "id": "home",
+      "name": "家居生活",
+      "subCategories": ["家具", "家纺", "厨具", "灯具", "装饰", "收纳"]
+    },
+    {
+      "id": "books",
+      "name": "图书音像",
+      "subCategories": ["文学", "教育", "科技", "艺术", "音像", "电子书"]
+    },
+    {
+      "id": "food",
+      "name": "食品生鲜",
+      "subCategories": ["零食", "生鲜", "酒水", "粮油", "调味", "保健"]
+    }
+  ],
+  "brands": [
+    "Apple", "小米", "华为", "联想", "戴尔", "海澜之家", "韩都衣舍", "宜家", "美的", "海尔"
+  ]
+}

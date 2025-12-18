@@ -1,0 +1,93 @@
+/* 深色主题 */
+.dark-theme {
+    --text-color: #e0e0e0;
+    --text-light: #b0b0b0;
+    --text-lighter: #808080;
+    --border-color: #444;
+    --bg-color: #1a1a1a;
+    --bg-light: #222;
+    --bg-lighter: #2a2a2a;
+}
+
+/* 蓝色主题 */
+.blue-theme {
+    --primary-color: #1890ff;
+    --primary-dark: #096dd9;
+    --primary-light: #e6f7ff;
+}
+
+/* 绿色主题 */
+.green-theme {
+    --primary-color: #52c41a;
+    --primary-dark: #389e0d;
+    --primary-light: #f6ffed;
+}
+
+/* 主题切换器 */
+.theme-switcher {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--bg-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.theme-red {
+    background: #e4393c;
+}
+
+.theme-blue {
+    background: #1890ff;
+}
+
+.theme-green {
+    background: #52c41a;
+}
+
+.theme-dark {
+    background: #1a1a1a;
+}
+
+/* 夜间模式切换按钮 */
+.dark-mode-toggle {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(30deg);
+}
